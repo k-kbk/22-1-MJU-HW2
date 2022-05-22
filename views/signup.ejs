@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/info.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="/signup.js"></script>
+  <title>signup</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <h1>today</h1>
+    </header>
+    <div class="container">
+      <div class="wrap">
+        <form action="/user" method="post" enctype="multipart/form-data" id="signup_form">
+          <div class="profile_wrap">
+            <div class="preview_wrap">
+              <img id="preview_img" src="/profile.jpg">
+            </div>
+            <div class="input_wrap">
+              <label for="img_input" id="img_label">프로필 이미지 업로드</label>
+              <input type="file" name="image" id="img_input">
+            </div>
+          </div>
+          <fieldset>
+            <dl>
+              <dt>
+                <label>아이디</label>
+              </dt>
+              <dd>
+                <input type="text" id="id" name="id" class="input_info" placeholder="ID" required autocomplete="off">
+                <button type="button" id="check_button" value="unchecked">중복 확인</button>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                <label>비밀번호</label>
+              </dt>
+              <dd>
+                <input type="password" id="pw" name="pw" class="input_info" placeholder="Password" required
+                  autocomplete="off">
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                <label>이름</label>
+              </dt>
+              <dd>
+                <input type="text" id="name" name="name" class="input_info" placeholder="Name" required
+                  autocomplete="off">
+              </dd>
+            </dl>
+            <button type="submit" id="submit_button" disabled=true>회원가입</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

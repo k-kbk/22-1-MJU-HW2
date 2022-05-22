@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="/main.js"></script>
+  <title>today</title>
+</head>
+
+<body>
+  <div class="contatiner">
+    <div class="nav_wrap">
+      <nav class="menu">
+        <div>
+          <h1 class="logo">today</h1>
+        </div>
+        <div class="profile_wrap">
+          <% if (data) { %>
+          <div class="img_wrap">
+            <% if (data.img == "") { %>
+            <img id="profile_img" src="profile.jpg">
+            <% } else { %>
+            <img id="profile_img" src="/uploads/<%= data.img %>">
+            <% } %>
+          </div>
+          <div>
+            <p><%= data.name %>님</p>
+          </div>
+          <% } %>
+        </div>
+        <div class="text_wrap">
+          <div class="line">
+            <div><a href="/edit">내 정보 수정</a></div>
+          </div>
+          <div class="line">
+            <div><a href="/user/logout">로그아웃</a></div>
+          </div>
+          <div class="line">
+            <div><button type="button" id="quit_button">탈퇴하기</button></div>
+          </div>
+          <div class="line">
+            <select name="mode" id="mode">
+              <option value="lightmode">Light Mode</option>
+              <option value="darkmode">Dark Mode</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="body_wrap">
+      <div class="todo_wrap">
+        <div class="todo_line">
+          <div>
+            <p class="title">🗂ㅤTo do</p>
+          </div>
+        </div>
+        <div class="input_wrap">
+          <form action="/todo" method="post" class="todo_form">
+            <input type="text" placeholder="할 일 추가하기" name="todo" class="todo_input" required>
+            <button type="submit" class="input_button">+</button>
+          </form>
+        </div>
+        <div id="todo_list">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

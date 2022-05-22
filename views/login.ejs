@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/login.css" />
+  <title>login</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <h1>today</h1>
+    </header>
+    <div class="container">
+      <div class="login_wrap">
+        <form action="/user/login" method="post" name="loginForm" class="login_form" autocomplete="off">
+          <div class="input_wrap">
+            <div><input type="text" name="id" placeholder="아이디" class="input" required></div>
+            <div><input type="password" name="pw" placeholder="비밀번호" class="input" required autocomplete="off"></div>
+          </div>
+          <div class="button_wrap">
+            <button type="submit" class="button">로그인</button>
+          </div>
+        </form>
+      </div>
+      <div class="signup_wrap">
+        <a href="/signup" id="signup_text">회원가입</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
